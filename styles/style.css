@@ -1,0 +1,261 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+:root {
+    --bar-width: 60px;
+    --bar-height: 8px;
+    --hamburger-gap: 6px;
+}
+
+.bg {
+    width: 100%;
+    height: 100vh;
+    background-image: url(../images/background.jpeg);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.bg1 {
+    width: 100%;
+    height: 120vh;
+    background-color: #29cfc4;
+}
+
+.logo {
+    width: 100px;
+    cursor: pointer;
+    opacity: 0;
+    animation: fadeIn 1s ease-in-out forwards;
+}
+
+.menu {
+    width: 30px;
+    cursor: pointer;
+}
+
+.navbar {
+    width: 85%;
+    height: 15%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.button {
+    background-color: transparent;
+    border: 2px solid #ffffff;
+    border-radius: 0;
+    box-sizing: border-box;
+    color: #000000;
+    cursor: pointer;
+    display: inline-block;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    margin: 0;
+    outline: none;
+    overflow: visible;
+    padding: 1.25em 2em;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    text-transform: none;
+    transition: all 0.3s ease-in-out;
+    user-select: none;
+    font-size: 13px;
+    opacity: 0;
+    animation: fadeIn 2s ease-in-out forwards;
+}
+
+.button::before {
+    content: " ";
+    width: 1.5625rem;
+    height: 2px;
+    background: rgb(255, 255, 255);
+    top: 50%;
+    left: 1.5em;
+    position: absolute;
+    transform: translateY(-50%);
+    transform-origin: center;
+    transition: background 0.3s linear, width 0.3s linear;
+}
+
+.button .text {
+    font-size: 1.125em;
+    line-height: 1.33333em;
+    padding-left: 2em;
+    display: block;
+    text-align: left;
+    transition: all 0.3s ease-in-out;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+}
+
+.button .top-key {
+    height: 2px;
+    width: 1.5625rem;
+    top: -2px;
+    left: 0.625rem;
+    position: absolute;
+    background: #000000;
+    transition: width 0.5s ease-out, left 0.3s ease-out;
+}
+
+.button .bottom-key-1 {
+    height: 2px;
+    width: 1.5625rem;
+    right: 1.875rem;
+    bottom: -2px;
+    position: absolute;
+    background: #ffffff;
+    transition: width 0.5s ease-out, right 0.3s ease-out;
+}
+
+.button .bottom-key-2 {
+    height: 2px;
+    width: 0.625rem;
+    right: 0.625rem;
+    bottom: -2px;
+    position: absolute;
+    background: #000000;
+    transition: width 0.5s ease-out, right 0.3s ease-out;
+}
+
+.button:hover {
+    color: rgb(0, 0, 0);
+    background: rgb(255, 255, 255);
+}
+
+.button:hover::before {
+    width: 0.9375rem;
+    background: rgb(0, 0, 0);
+}
+
+.button:hover .text {
+    color: rgb(0, 0, 0);
+    padding-left: 1.5em;
+}
+
+.button:hover .top-key {
+    left: -2px;
+    width: 0px;
+}
+
+.button:hover .bottom-key-1,
+.button:hover .bottom-key-2 {
+    right: 0;
+    width: 0;
+}
+
+.content {
+    color: white;
+    position: absolute;
+    top: 55%;
+    left: 10%;
+    transform: translateY(-50%);
+}
+
+.content1 {
+    position: absolute;
+    top: 430px;
+    left: 50px;
+    transform: translateY(-55%);
+}
+
+.content2 {
+    position: absolute;
+    top: 420px;
+    left: 250px;
+    transform: translateY(-50%);
+}
+
+#value {
+    font-size: 15px;
+}
+
+h1 {
+    font-size: 80px;
+    margin: 10px 10px 30px 0;
+    line-height: 80px;
+    opacity: 0;
+    animation: fadeIn 2s ease-in-out forwards;
+}
+
+h2 {
+    opacity: 0;
+    animation: fadeIn 1s ease-in-out forwards;
+}
+
+#tooltip {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.8);
+    font-size: 12px;
+    padding: 6px;
+    border-radius: 4px;
+    pointer-events: none;
+    display: none;
+    height: auto;
+    width: 250px;
+    color: #ffffff;
+    line-height: 20px;
+}
+
+#country {
+    text-align: center;
+    font-weight: bold;
+    font-size: large;
+}
+
+#year {
+    text-align: center;
+    font-weight: bold;
+    font-size: large;
+}
+
+#tooltip span {
+    display: inline-block;
+}
+
+#title {
+    float: left;
+}
+
+#variable {
+    float: right;
+}
+
+.legend-item {
+    width: 25%;
+    text-align: center;
+    color: white;
+    transform: translateY(-3200%) translateX(300%);
+    font-size: 15px;
+    cursor: default;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    h1 {
+        font-size: 36px;
+        line-height: 50px;
+    }
+
+    .bg {
+        background-image: url(../images/small-bg.jpeg);
+    }
+}

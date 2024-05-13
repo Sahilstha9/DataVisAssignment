@@ -7,33 +7,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Project" />
     <meta name="keywords" content="HTML, CSS, D3, CSV" />
-    <meta name="author" content="Miad, Sahil" />
-    <title>OECD health stats</title>
+    <meta name="author" content="Miad,Sahil" />
+    <title>OECD health statistics</title>
 
     <!-- This section contains links to external resources used by the document, including the D3 JavaScript library, a custom JavaScript file, and a CSS stylesheet. -->
     <link rel="stylesheet" type="text/css" href="styles/style.css" />
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="scripts/charts/stackbar.js"></script>
 </head>
 
 <body>
-    <div class="bg">
+    <div class="bg1">
         <div class="navbar">
             <a href="https://www.swinburne.edu.au/"><img src="images/logo.png" class="logo"></a>
+            <p style="font-size: 30px;">Main causes of mortality by country, 2021 </p>
+            <p></p>
         </div>
-        <div class="content">
-            <h2>An Interactive Visualization of Life Expectancy and Economic Indicators</h2>
-            <h1>Health and Wealth of Nations</h1>
-            <a class="button" href="visualisation1.html">
-                <span class="top-key"></span>
-                <span class="text">Visualisation 1</span>
-                <span class="bottom-key-1"></span>
-                <span class="bottom-key-2"></span>
-            </a>
-            <a class="button" href="visualisation2.html">
-                <span class="top-key"></span>
-                <span class="text">Visualisation 2</span>
-                <span class="bottom-key-1"></span>
-                <span class="bottom-key-2"></span>
-            </a>
+        <div class="content2">
+            <div id="chart"></div>
+            <div id="legend"></div>
+        </div>
+        <div id="tooltip" style="width: 300px;">
+            <p id="value"></p>
         </div>
     </div>
 </body>

@@ -23,6 +23,8 @@ function init() {
             console.log(combinedData);
         });
     });
+
+
 }
 
 window.onload = init;
