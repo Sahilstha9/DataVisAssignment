@@ -47,6 +47,12 @@
     justify-content: space-between;
 }
 
+.countryHovered {
+    stroke-width: 0.5;
+    opacity: 1;
+    transition: 250ms;
+}
+
 .button {
     background-color: transparent;
     border: 2px solid #ffffff;
