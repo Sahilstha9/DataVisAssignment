@@ -94,18 +94,14 @@ function init() {
                         .style("stroke-width", 1);
                 });
 
-            // Draw Color Gradient Scale
             svg.append("rect").attr("id", "colorScale").attr("x", 20).attr("y", h - 50).attr("width", 150).attr("height", 20).style("stroke", "black")
                 .style("stroke-width", 0.5);
-            // Get Linear Color Gradient
             const defs = svg.append("defs"), linearGradient = defs.append("linearGradient").attr("id", "linear-gradient");
             linearGradient.selectAll(".stop").data(color.range()).enter().append("stop").attr("offset", (d, i) => i / (color.range().length - 1)).attr("stop-color", d => d);
-            // Append Gradient To Rectangle
             svg.select("#colorScale").style("fill", "url(#linear-gradient)").style("opacity", 1);
             svg.append("text").text("Years").attr("x", 75).attr("y", h - 55).style("fill", "black");
             svg.append("text").text(Math.ceil(color.domain()[0])).attr("x", 20).attr("y", h - 55).attr("id", "min").style("fill", "black");
             svg.append("text").text(Math.ceil(color.domain()[1])).attr("x", 150).attr("y", h - 55).attr("id", "max").style("fill", "black");
-            // Draw No Data Hue Indicator
             svg.append("rect").attr("x", 20).attr("y", h - 20).attr("width", 30).attr("height", 20).attr("fill", "#ccc").style("stroke", "black")
                 .style("stroke-width", 0.5);
             svg.append("text").text("No Data").attr("x", 55).attr("y", h - 5).style("fill", "black");
