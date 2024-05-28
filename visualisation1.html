@@ -16,6 +16,7 @@
     <!-- D3 -->
     <script src="https://d3js.org/d3.v7.min.js"></script>
     <link rel="stylesheet" type="text/css" href="styles/style.css" />
+    <link rel="stylesheet" type="text/css" href="styles/style.css" />
     <style>
         section {
             display: flex;
@@ -69,36 +70,24 @@
 </head>
 
 <body>
+    <div class="navbar">
+        <a href="#" class="previous disabled">Previous Page</a>
+        <div class="index">
+            <a href="index.html">Home</a>
+        </div>
+        <a href="visualisation2.html" class="next">Next Page</a>
+    </div>
 
     <script src="scripts/charts/choropleth.js"></script>
     <script src="scripts/charts/area.js"></script>
     <section>
-        <p id="currentValue">1</p>
+        <p id="currentValue">2022</p>
         <p>2010</p>
         <input onchange="updateChoroplethChart(document.getElementById('year').value)" type="range" name="year"
             id="year" min="2010" max="2022" value="2022" width="100%">
         <p>2022</p>
     </section>
     </main>
-    <!-- Footer -->
-    <!-- <footer class="container pb-4">
-        <ul class="nav justify-content-center border-bottom pb-3 mb-3">
-            <li class="nav-item"><span class="nav-link px-2 text-muted">Sahil Shrestha (103497922)</span></li>
-            <li class="nav-item"><span class="nav-link px-2 text-muted">Miad Hossain (103810448)</span></li>
-        </ul>
-        <p class="text-center text-muted">COS30045 Data Visualisation | Semester 1 2024 | Swinburne University of
-            Technology</p>
-    </footer> -->
-    <!-- <script src="scripts/charts/scatterplot.js"></script> -->
 </body>
-
-<footer>
-    <ul>
-        <li>Sahil Shrestha (103497922)</li>
-        <li>Miad Hossain (103810448)</li>
-    </ul>
-    <p>COS30045 Data Visualisation | Semester 1 2024 | Swinburne University of
-        Technology</p>
-</footer>
 
 </html>

@@ -1,10 +1,20 @@
 
-var w = 2000;
+var w = 1500;
 var h = 700;
 
 var projection = d3.geoMercator().scale(160).center([0, 41]).translate([w / 2, h / 2]);
 
 var path = d3.geoPath().projection(projection);
+
+var text = d3.select("body").append("div").attr("width", w).attr("class", "container").style("opacity", 0);
+
+text.append("h1").text("Global Life Expectancy: A Visual Journey Through Health and Longevity").style("text-align", "center").style("font-size", "24px").style("font-family", "Arial").style("color", "black");
+text.append("p").text("Life expectancy at birth is a crucial indicator of a nation's overall health and well-being. It reflects not only the quality of healthcare systems but also the socioeconomic conditions, environmental factors, and public health policies in place. The following visualization showcases the current state of life expectancy across the globe, with countries shaded from red (lower life expectancy) to green (higher life expectancy).");
+text.append("p").text("By exploring this map, we can identify regions where people live longer, healthier lives and contrast them with areas where life expectancy remains troublingly low. The colors on the map reveal stark disparities, highlighting the uneven distribution of health outcomes worldwide.");
+text.append("p").text("Accompanying this map is a line chart tracking changes in global life expectancy over time for selected countries. This chart allows us to delve deeper into the trends and progress made in different regions. For instance, many countries in Sub-Saharan Africa have seen significant improvements in life expectancy due to better access to healthcare, improved sanitation, and successful public health campaigns. However, challenges remain, and some regions continue to struggle with lower life expectancy due to issues like conflict, disease, and inadequate healthcare infrastructure.");
+text.append("p").text("It is interesting to note the correlation between life expectancy and various socioeconomic factors. Countries investing in healthcare, education, and social services often see a corresponding increase in life expectancy. Conversely, regions facing economic hardships, political instability, or severe environmental conditions tend to lag behind.");
+text.append("p").text("By examining the map and the accompanying trends over time, we can gain insights into the factors that drive longevity and health. This visualization serves as a tool to understand where efforts are needed most and how global health initiatives can be tailored to address the disparities and improve life outcomes for all.");
+
 
 var svg = d3.select("body").append("svg").attr("width", w).attr("height", h).attr("fill", "lightgrey");
 var mapGroup = svg.append("g").attr("class", "map").attr("transform", "translate(0, 25)").style("stroke", "black")
@@ -15,6 +25,7 @@ var color = d3.scaleQuantize()
     .range(colorRange);
 
 function init() {
+    w = parseInt(svg.style("width"));
     d3.csv("./data/LifeExpectancy.csv").then(function (data) {
         color.domain([d3.min(data, function (d) { return +d.Y2022 }), d3.max(data, function (d) { return +d.Y2022; })]);
         d3.json("./data/world.geojson").then(async function (json) {
@@ -109,14 +120,6 @@ function init() {
         })
 
     })
-
-    svg.append("text")
-        .attr("x", w / 2)
-        .attr("y", 30)
-        .attr("text-anchor", "middle")
-        .style("font-size", "24px")
-        .style("font-family", "Arial")
-        .text("Life Expectancy in 2022").attr("fill", "black");
 
 }
 

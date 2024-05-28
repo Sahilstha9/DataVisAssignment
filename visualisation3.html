@@ -8,79 +8,27 @@
     <meta name="description" content="Project" />
     <meta name="keywords" content="HTML, CSS, D3, CSV" />
     <meta name="author" content="Miad,Sahil" />
-    <title>Life Expectancy against Health Expenditure</title>
+    <title>OECD health statistics</title>
 
+    <!-- This section contains links to external resources used by the document, including the D3 JavaScript library, a custom JavaScript file, and a CSS stylesheet. -->
+    <link rel="stylesheet" type="text/css" href="styles/style.css" />
     <script src="https://d3js.org/d3.v7.min.js"></script>
-    <script src="scripts/charts/scatterplot.js"></script>
-
-    <style>
-        section {
-            display: flex;
-            align-items: center;
-            width: 100%;
-            padding: 20px;
-            box-sizing: border-box;
-            background-color: #f5f5f5;
-        }
-
-        p {
-            margin: 0 10px;
-            font-weight: bold;
-        }
-
-        input[type="range"] {
-            flex: 1;
-            -webkit-appearance: none;
-            appearance: none;
-            height: 8px;
-            background: #ddd;
-            outline: none;
-            opacity: 0.7;
-            -webkit-transition: .2s;
-            transition: opacity .2s;
-            margin: 0 10px;
-        }
-
-        input[type="range"]:hover {
-            opacity: 1;
-        }
-
-        input[type="range"]::-webkit-slider-thumb {
-            -webkit-appearance: none;
-            appearance: none;
-            width: 25px;
-            height: 25px;
-            background: #4CAF50;
-            cursor: pointer;
-            border-radius: 50%;
-        }
-
-        input[type="range"]::-moz-range-thumb {
-            width: 25px;
-            height: 25px;
-            background: #4CAF50;
-            cursor: pointer;
-            border-radius: 50%;
-        }
-    </style>
+    <script src="scripts/charts/stackbar.js"></script>
 </head>
 
 <body>
-    <div>
-        <div>
-            <a href="https://www.swinburne.edu.au/"><img src="images/logo.png" class="logo"></a>
-            <p style="font-size: 30px;">Life Expectancy vs Health Expenditure </p>
-            <p></p>
+    <div class="navbar">
+        <a href="visualisation2.html" class="previous">Previous Page</a>
+        <div class="index">
+            <a href="index.html">Home</a>
+        </div>
+        <a href="#" class="next disabled">Next Page</a>
+    </div>
+    <div class="bg1">
+        <div id="tooltip" style="width: 300px;">
+            <p id="value"></p>
         </div>
     </div>
-
-    <section>
-        <p id="currentValue">2022</p>
-        <p>2015</p>
-        <input onchange="updateScatterPlotChart(document.getElementById('year').value)" type="range" name="year"
-            id="year" min="2015" max="2022" value="2022" width="100%">
-        <p>2022</p>
-    </section>
 </body>
 
 </html>
