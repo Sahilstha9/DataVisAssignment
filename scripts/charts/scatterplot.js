@@ -188,6 +188,8 @@ function init() {
         .style("transform", "translateY(0)")
         .style("opacity", 1);
 
+    text.transition().duration(2000).style("opacity", 1);
+
 }
 
 function handleMouseOut(event, d) {
@@ -224,6 +226,7 @@ function handleMouseOver(event, d) {
     var tooltipY = event.pageY > 800 ? event.pageY - 600 : event.pageY - 550;
     tooltip.style("transform", "translate(" + tooltipX + "px, " + tooltipY + "px)")
         .style("display", "block");
+
 }
 
 function changeYear(year) {
@@ -280,7 +283,6 @@ function updateScatterPlotChart(year) {
         .attr('y', function (d) { return yScale(d["lifeExpectancyY" + year.toString()]) - 2.5; })
 
 
-    text.transition().duration(2000).style("opacity", 1);
 
 }
 window.onload = init;

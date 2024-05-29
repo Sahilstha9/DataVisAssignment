@@ -169,6 +169,8 @@ function init() {
         .catch(function (error) {
             console.log(error);
         });
+
+    text.transition().duration(2000).style("opacity", 1);
 }
 
 function handleMouseOver(event, d) {
