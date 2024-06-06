@@ -164,6 +164,12 @@ function init() {
                 .attr("font-weight", "lighter")
                 .attr("font-size", "15px");
 
+            svg.append("text")
+                .attr("class", "axis-label")
+                .attr("transform", "translate(" + (w / 2) + " ," + (h - yPadding / 1.4) + ")")
+                .style("text-anchor", "middle")
+                .text("Health Expenditure (%)");
+
             text.transition().duration(2000).style("opacity", 1);
         })
         .catch(function (error) {
