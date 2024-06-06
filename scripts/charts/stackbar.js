@@ -169,7 +169,7 @@ function init() {
                 .attr("class", "axis-label")
                 .attr("transform", "translate(" + (w / 2) + " ," + (h - yPadding / 1.4) + ")")
                 .style("text-anchor", "middle")
-                .text("Health Expenditure (%)");
+                .text("Number of Deaths");
 
             text.transition().duration(2000).style("opacity", 1);
         })
